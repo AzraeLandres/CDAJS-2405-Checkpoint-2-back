@@ -8,10 +8,11 @@ export class CountryMutations {
   async createCountry(
     @Arg("code", { nullable: true }) code: string,
     @Arg("name") name: string,
-    @Arg("emoji", { nullable: true }) emoji: string
+    @Arg("emoji", { nullable: true }) emoji: string,
+    @Arg("continentCode", { nullable: true }) continentCode: string
   ): Promise<Country> {
     try {
-      const newCountry = new Country(code, name, emoji);
+      const newCountry = new Country(code, name, emoji, continentCode);
       await dataSource.manager.save(newCountry);
       return newCountry;
     } catch (error) {

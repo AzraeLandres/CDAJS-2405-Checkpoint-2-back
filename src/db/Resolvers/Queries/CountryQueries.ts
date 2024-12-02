@@ -22,4 +22,14 @@ export class CountryQueries {
 
     return country;
   }
+
+  @Query((type) => [Country])
+  async getCountrysByContinentCode(
+    @Arg("continentCode") continentCode: string
+  ): Promise<Country[]> {
+    const countrys: Country[] = await dataSource.manager.find(Country, {
+      where: { continentCode: continentCode },
+    });
+    return countrys;
+  }
 }
