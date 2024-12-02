@@ -25,5 +25,4 @@ export async function initTestData() {
   await CreateTestData("IT", "Italy", "🇮🇹");
   await CreateTestData("PT", "Portugal", "🇵🇹");
   await CreateTestData("BE", "Belgium", "🇧🇪");
-  await CreateTestData("NL", "Netherlands", "🇳🇱");
 }

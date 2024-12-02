@@ -11,7 +11,7 @@ export class CountryMutations {
     @Arg("emoji", { nullable: true }) emoji: string
   ): Promise<Country> {
     try {
-      const newCountry = new Country(name, code, emoji);
+      const newCountry = new Country(code, name, emoji);
       await dataSource.manager.save(newCountry);
       return newCountry;
     } catch (error) {
